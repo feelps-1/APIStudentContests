@@ -13,6 +13,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+/// @@allow('read', true)
 model Contest {
   id          String @id() @default(cuid())
   name        String @unique()
