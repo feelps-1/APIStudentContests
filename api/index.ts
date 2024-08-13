@@ -10,12 +10,17 @@ app.use(express.json());
 const prisma = new PrismaClient();
 
 // Configuração do middleware CORS
-app.use(cors({
-    origin: '*', // Permite todas as origens. Ajuste conforme necessário.
-    methods: ['GET', 'OPTIONS', 'PATCH', 'DELETE', 'POST', 'PUT'],
-    allowedHeaders: ['X-CSRF-Token', 'X-Requested-With', 'Accept', 'Accept-Version', 'Content-Length', 'Content-MD5', 'Content-Type', 'Date', 'X-Api-Version'],
-    credentials: true
-}));
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
+    } else {
+        next();
+    }
+});
 
 app.use((req, res, next) => {
     if (req.method === 'OPTIONS') {
