@@ -7,28 +7,28 @@ const contestData: Prisma.ContestCreateInput[] = [
         id: 'dlj',
         name: 'Desafio Liga Jovem',
         description: 'kitten',
-        icon: '',
+        icon: 'dasdsa',
         tematic: 'Tecnologia',
-        education: '',
-        modality: ''
+        education: 'dsadas',
+        modality: 'dsada'
     },
     {
         id: 'nsa',
         name: 'Nasa Space Apps',
         description: 'kitten',
-        icon: '',
+        icon: 'dsadsad',
         tematic: 'Tecnologia',
-        education: '',
-        modality: ''
+        education: 'dsadas',
+        modality: 'dsadas'
     },
     {
         id: 'cpe',
         name: 'Copa Colegial de Empreendedorismo',
         description: 'kitten',
-        icon: '',
+        icon: 'sdasdsa',
         tematic: 'Empreendedorismo',
-        education: '',
-        modality: ''
+        education: 'dsadasd',
+        modality: 'dasdasd'
     },
 ];
 
