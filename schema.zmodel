@@ -1,0 +1,19 @@
+datasource db {
+    provider = "postgresql"
+    url = env("POSTGRES_PRISMA_URL")
+    directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Contest {
+    id String @id @default(cuid())
+    name String @unique
+    description String
+    icon String
+    tematic String
+    education String
+    modality String
+}
