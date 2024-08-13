@@ -16,4 +16,6 @@ model Contest {
     tematic String
     education String
     modality String
+
+    @@allow('read', true)
 }
