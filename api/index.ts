@@ -44,7 +44,7 @@ app.use('/api', ZenStackMiddleware({
 
 const options = { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css' };
 const spec = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '../petstore-api.json'), 'utf8')
+    fs.readFileSync(path.join(__dirname, '../contestsearch-api.json'), 'utf8')
 );
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
 

@@ -440,9 +440,9 @@
             }
           },
           {
-            "name": "filter[website]",
+            "name": "filter[site]",
             "required": false,
-            "description": "Equality filter for \"website\"",
+            "description": "Equality filter for \"site\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -451,9 +451,9 @@
             }
           },
           {
-            "name": "filter[website$contains]",
+            "name": "filter[site$contains]",
             "required": false,
-            "description": "String contains filter for \"website\"",
+            "description": "String contains filter for \"site\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -462,9 +462,9 @@
             }
           },
           {
-            "name": "filter[website$icontains]",
+            "name": "filter[site$icontains]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"website\"",
+            "description": "String case-insensitive contains filter for \"site\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -473,9 +473,9 @@
             }
           },
           {
-            "name": "filter[website$search]",
+            "name": "filter[site$search]",
             "required": false,
-            "description": "String full-text search filter for \"website\"",
+            "description": "String full-text search filter for \"site\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -484,9 +484,9 @@
             }
           },
           {
-            "name": "filter[website$startsWith]",
+            "name": "filter[site$startsWith]",
             "required": false,
-            "description": "String startsWith filter for \"website\"",
+            "description": "String startsWith filter for \"site\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -495,9 +495,9 @@
             }
           },
           {
-            "name": "filter[website$endsWith]",
+            "name": "filter[site$endsWith]",
             "required": false,
-            "description": "String endsWith filter for \"website\"",
+            "description": "String endsWith filter for \"site\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -994,7 +994,7 @@
               "modality": {
                 "type": "string"
               },
-              "website": {
+              "site": {
                 "type": "string"
               }
             }
@@ -1028,7 +1028,7 @@
                   "tematic",
                   "education",
                   "modality",
-                  "website"
+                  "site"
                 ],
                 "properties": {
                   "name": {
@@ -1049,7 +1049,7 @@
                   "modality": {
                     "type": "string"
                   },
-                  "website": {
+                  "site": {
                     "type": "string"
                   }
                 }
@@ -1104,7 +1104,7 @@
                   "modality": {
                     "type": "string"
                   },
-                  "website": {
+                  "site": {
                     "type": "string"
                   }
                 }
