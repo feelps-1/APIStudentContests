@@ -22,4 +22,5 @@ model Contest {
   tematic     String
   education   String
   modality    String
+  website     String
 }

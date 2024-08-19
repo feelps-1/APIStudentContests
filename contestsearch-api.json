@@ -1,0 +1,1275 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Contest Search API",
+    "version": "0.1.0",
+    "description": "A Open API to help students to find competitions to participate"
+  },
+  "tags": [
+    {
+      "name": "contest",
+      "description": "Contest operations"
+    }
+  ],
+  "paths": {
+    "/api/contest": {
+      "get": {
+        "operationId": "list-Contest",
+        "description": "List \"Contest\" resources",
+        "tags": [
+          "contest"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name]",
+            "required": false,
+            "description": "Equality filter for \"name\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name$contains]",
+            "required": false,
+            "description": "String contains filter for \"name\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"name\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name$search]",
+            "required": false,
+            "description": "String full-text search filter for \"name\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"name\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"name\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description]",
+            "required": false,
+            "description": "Equality filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$contains]",
+            "required": false,
+            "description": "String contains filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$search]",
+            "required": false,
+            "description": "String full-text search filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[icon]",
+            "required": false,
+            "description": "Equality filter for \"icon\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[icon$contains]",
+            "required": false,
+            "description": "String contains filter for \"icon\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[icon$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"icon\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[icon$search]",
+            "required": false,
+            "description": "String full-text search filter for \"icon\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[icon$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"icon\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[icon$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"icon\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tematic]",
+            "required": false,
+            "description": "Equality filter for \"tematic\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tematic$contains]",
+            "required": false,
+            "description": "String contains filter for \"tematic\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tematic$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"tematic\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tematic$search]",
+            "required": false,
+            "description": "String full-text search filter for \"tematic\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tematic$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"tematic\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tematic$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"tematic\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[education]",
+            "required": false,
+            "description": "Equality filter for \"education\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[education$contains]",
+            "required": false,
+            "description": "String contains filter for \"education\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[education$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"education\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[education$search]",
+            "required": false,
+            "description": "String full-text search filter for \"education\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[education$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"education\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[education$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"education\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[modality]",
+            "required": false,
+            "description": "Equality filter for \"modality\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[modality$contains]",
+            "required": false,
+            "description": "String contains filter for \"modality\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[modality$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"modality\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[modality$search]",
+            "required": false,
+            "description": "String full-text search filter for \"modality\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[modality$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"modality\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[modality$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"modality\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[website]",
+            "required": false,
+            "description": "Equality filter for \"website\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[website$contains]",
+            "required": false,
+            "description": "String contains filter for \"website\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[website$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"website\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[website$search]",
+            "required": false,
+            "description": "String full-text search filter for \"website\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[website$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"website\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[website$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"website\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContestListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "operationId": "create-Contest",
+        "description": "Create a \"Contest\" resource",
+        "tags": [
+          "contest"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContestCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContestResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Request is unprocessable due to validation errors",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contest/{id}": {
+      "get": {
+        "operationId": "fetch-Contest",
+        "description": "Fetch a \"Contest\" resource",
+        "tags": [
+          "contest"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContestResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "operationId": "update-Contest-put",
+        "description": "Update a \"Contest\" resource",
+        "tags": [
+          "contest"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContestUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContestResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Request is unprocessable due to validation errors",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Contest-patch",
+        "description": "Update a \"Contest\" resource",
+        "tags": [
+          "contest"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContestUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContestResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Request is unprocessable due to validation errors",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-Contest",
+        "description": "Delete a \"Contest\" resource",
+        "tags": [
+          "contest"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "_jsonapi": {
+        "type": "object",
+        "description": "An object describing the server’s implementation",
+        "required": [
+          "version"
+        ],
+        "properties": {
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "_meta": {
+        "type": "object",
+        "description": "Meta information about the request or response",
+        "properties": {
+          "serialization": {
+            "description": "Superjson serialization metadata"
+          }
+        },
+        "additionalProperties": true
+      },
+      "_resourceIdentifier": {
+        "type": "object",
+        "description": "Identifier for a resource",
+        "required": [
+          "type",
+          "id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Resource type"
+          },
+          "id": {
+            "type": "string",
+            "description": "Resource id"
+          }
+        }
+      },
+      "_resource": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/_resourceIdentifier"
+          },
+          {
+            "type": "object",
+            "description": "A resource with attributes and relationships",
+            "properties": {
+              "attributes": {
+                "type": "object",
+                "description": "Resource attributes"
+              },
+              "relationships": {
+                "type": "object",
+                "description": "Resource relationships"
+              }
+            }
+          }
+        ]
+      },
+      "_links": {
+        "type": "object",
+        "required": [
+          "self"
+        ],
+        "description": "Links related to the resource",
+        "properties": {
+          "self": {
+            "type": "string",
+            "description": "Link for refetching the curent results"
+          }
+        }
+      },
+      "_pagination": {
+        "type": "object",
+        "description": "Pagination information",
+        "required": [
+          "first",
+          "last",
+          "prev",
+          "next"
+        ],
+        "properties": {
+          "first": {
+            "type": "string",
+            "description": "Link to the first page",
+            "nullable": true
+          },
+          "last": {
+            "type": "string",
+            "description": "Link to the last page",
+            "nullable": true
+          },
+          "prev": {
+            "type": "string",
+            "description": "Link to the previous page",
+            "nullable": true
+          },
+          "next": {
+            "type": "string",
+            "description": "Link to the next page",
+            "nullable": true
+          }
+        }
+      },
+      "_errors": {
+        "type": "array",
+        "description": "An array of error objects",
+        "items": {
+          "type": "object",
+          "required": [
+            "status",
+            "code"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "description": "HTTP status"
+            },
+            "code": {
+              "type": "string",
+              "description": "Error code"
+            },
+            "prismaCode": {
+              "type": "string",
+              "description": "Prisma error code if the error is thrown by Prisma"
+            },
+            "title": {
+              "type": "string",
+              "description": "Error title"
+            },
+            "detail": {
+              "type": "string",
+              "description": "Error detail"
+            },
+            "reason": {
+              "type": "string",
+              "description": "Detailed error reason"
+            },
+            "zodErrors": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "Zod validation errors if the error is due to data validation failure"
+            }
+          }
+        }
+      },
+      "_errorResponse": {
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "description": "An error response",
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/_errors"
+          }
+        }
+      },
+      "Contest": {
+        "type": "object",
+        "description": "The \"Contest\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "tematic": {
+                "type": "string"
+              },
+              "education": {
+                "type": "string"
+              },
+              "modality": {
+                "type": "string"
+              },
+              "website": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "ContestCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"Contest\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Contest\" model",
+            "required": [
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "description",
+                  "icon",
+                  "tematic",
+                  "education",
+                  "modality",
+                  "website"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "string"
+                  },
+                  "tematic": {
+                    "type": "string"
+                  },
+                  "education": {
+                    "type": "string"
+                  },
+                  "modality": {
+                    "type": "string"
+                  },
+                  "website": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "ContestUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"Contest\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Contest\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "string"
+                  },
+                  "tematic": {
+                    "type": "string"
+                  },
+                  "education": {
+                    "type": "string"
+                  },
+                  "modality": {
+                    "type": "string"
+                  },
+                  "website": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "ContestResponse": {
+        "type": "object",
+        "description": "Response for a \"Contest\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Contest"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "ContestListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"Contest\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Contest"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "id",
+        "in": "path",
+        "description": "The resource id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "include": {
+        "name": "include",
+        "in": "query",
+        "description": "Relationships to include",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "sort": {
+        "name": "sort",
+        "in": "query",
+        "description": "Fields to sort by",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "page-offset": {
+        "name": "page[offset]",
+        "in": "query",
+        "description": "Offset for pagination",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "page-limit": {
+        "name": "page[limit]",
+        "in": "query",
+        "description": "Limit for pagination",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "securitySchemes": {
+      "myBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "myBearer": []
+    }
+  ]
+}

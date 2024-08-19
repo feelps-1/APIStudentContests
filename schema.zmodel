@@ -16,6 +16,22 @@ model Contest {
     tematic String
     education String
     modality String
+    website String
 
     @@allow('read', true)
 }
+
+plugin openapi {
+    provider = '@zenstackhq/openapi'
+    prefix = '/api'
+    flavor = 'rest'
+    title = 'Contest Search API'
+    specVersion = '3.0.0'
+    version = '0.1.0'
+    description = 'A Open API to help students to find competitions to participate'
+    output = 'contestsearch-api.json'
+    securitySchemes = { 
+        myBearer: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }
+    }
+}
+
