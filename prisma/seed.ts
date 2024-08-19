@@ -11,7 +11,7 @@ const contestData: Prisma.ContestCreateInput[] = [
         tematic: 'Tecnologia, Empreendedorismo',
         education: 'Ensino Fundamental, Médio, Técnico e Superior',
         modality: 'Equipes',
-        website: 'https://www.desafioligajovem.com.br/'
+        // website: 'https://www.desafioligajovem.com.br/',
     },
     {
         id: 'nsa',
@@ -21,7 +21,7 @@ const contestData: Prisma.ContestCreateInput[] = [
         tematic: 'Tecnologia',
         education: 'Livre',
         modality: 'Equipes ou individual',
-        website: 'https://www.spaceappschallenge.org/'
+        // website: 'https://www.spaceappschallenge.org/',
     },
     {
         id: 'cpe',
@@ -31,7 +31,7 @@ const contestData: Prisma.ContestCreateInput[] = [
         tematic: 'Empreendedorismo',
         education: 'Ensino médio',
         modality: 'Equipes',
-        website: 'https://www.copacolegial.com.br/'
+        // website: 'https://www.copacolegial.com.br/',
     },
 ];
 

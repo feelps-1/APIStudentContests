@@ -7,6 +7,7 @@ CREATE TABLE "Contest" (
     "tematic" TEXT NOT NULL,
     "education" TEXT NOT NULL,
     "modality" TEXT NOT NULL,
+    "website" TEXT NOT NULL,
 
     CONSTRAINT "Contest_pkey" PRIMARY KEY ("id")
 );
