@@ -8,12 +8,16 @@ import fs from 'fs';
 import path from 'path';
 
 const app = express();
+const options = { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css' };
+const spec = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../contestsearch-api.json'), 'utf8')
+);
+
 app.use(express.json());
 app.use(cors())
 
 const prisma = new PrismaClient();
 
-// Configuração do middleware CORS
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -42,10 +46,6 @@ app.use('/api', ZenStackMiddleware({
     handler: apiHandler 
 }));
 
-const options = { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css' };
-const spec = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '../contestsearch-api.json'), 'utf8')
-);
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
 
 export default app;
