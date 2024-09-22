@@ -30,6 +30,9 @@ app.use(function (req, res, next) {
     }
 });
 
+
+app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
+
 app.use((req, res, next) => {
     if (req.method === 'OPTIONS') {
         res.status(200).send();
@@ -45,7 +48,5 @@ app.use('/api', ZenStackMiddleware({
     getPrisma: () => prisma,
     handler: apiHandler 
 }));
-
-app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
 
 export default app;
