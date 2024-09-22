@@ -8,7 +8,7 @@ import fs from 'fs';
 import path from 'path';
 
 const app = express();
-const options = { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css' };
+const customCSS = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css' 
 const spec = JSON.parse(
     fs.readFileSync(path.join(__dirname, '../contestsearch-api.json'), 'utf8')
 );
@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
 });
 
 
-app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
+app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, {customCssUrl: customCSS}));
 
 app.use((req, res, next) => {
     if (req.method === 'OPTIONS') {
